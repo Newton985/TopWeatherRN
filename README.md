@@ -17,9 +17,9 @@ The data is fethed from [AccuWeather_API](https://developer.accuweather.com/)
 
  ## Screenshots
 <p float="left">
- <img src="assets/topcities.jpg" alt="Top Cities" width="250" height="500"/>
- <img src="assets/details.jpg" alt="Top Cities" width="250" height="500"/>
- <img src="assets/notification.jpg" alt="Top Cities" width="250" height="500"/>
+ <img src="assets/topcities.jpg" alt="Top Cities" width="250" height="520"/>
+ <img src="assets/details.jpg" alt="Top Cities" width="250" height="520"/>
+ <img src="assets/notification.jpg" alt="Top Cities" width="250" height="520"/>
 </p>
 
 ## Top Libraries Used
