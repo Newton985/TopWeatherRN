@@ -16,11 +16,11 @@ The data is fethed from [AccuWeather_API](https://developer.accuweather.com/)
  * Works offline once data is pulled
 
  ## Screenshots
-
- <img src="assets/topcities.jpg" alt="Top Cities" width="200" height="500"/>
- <img src="assets/details.jpg" alt="Top Cities" width="200" height="500"/>
- <img src="assets/notification.jpg" alt="Top Cities" width="200" height="500"/>
-
+<p float="left">
+ <img src="assets/topcities.jpg" alt="Top Cities" width="250" height="500"/>
+ <img src="assets/details.jpg" alt="Top Cities" width="250" height="500"/>
+ <img src="assets/notification.jpg" alt="Top Cities" width="250" height="500"/>
+</p>
 
 ## Top Libraries Used
 
