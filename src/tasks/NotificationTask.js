@@ -4,12 +4,13 @@ import { WeatherRepository } from '../realm/repository/WeatherRepository';
 
 export const StartBackGroundTasks = () => {
 
-    //const delay = 60 - new Date().getMinutes() // minutes remaining till next hour
+    const delay = 60 - new Date().getMinutes() // minutes remaining till next hour
+          delay = delay * 60 * 1000 // in millisecs
 
     // Background fetch setup
   BackgroundFetch.configure(
         {
-            minimumFetchInterval: 15,
+            minimumFetchInterval: 60, // hourly
 
         },
         async (taskId) => {
@@ -48,7 +49,7 @@ export const StartBackGroundTasks = () => {
     ).then( status => {
 
         BackgroundFetch.scheduleTask({
-            delay: 10,
+            delay: delay,                // task to start after delay
             periodic: true,
             requiredNetworkType: BackgroundFetch.NETWORK_TYPE_ANY,
             startOnBoot: true,
