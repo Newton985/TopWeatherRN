@@ -11,10 +11,17 @@ import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { TopCities } from './src/pages/TopCities';
 import { CityWeatherDetails } from './src/pages/CityWeatherDetails';
+import { useEffect } from 'react';
+import { StartBackGroundTasks } from './src/tasks/NotificationTask';
+import FlashMessage from 'react-native-flash-message';
 
 const App = () => {
 
   const Stack = createNativeStackNavigator();
+
+  useEffect(()=> {
+     StartBackGroundTasks()
+  })
 
   return (
     <NavigationContainer theme={DefaultTheme}>
@@ -37,6 +44,10 @@ const App = () => {
         />
 
       </Stack.Navigator>
+
+
+     <FlashMessage  />
+
     </NavigationContainer>
   );
 };

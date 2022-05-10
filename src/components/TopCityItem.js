@@ -9,21 +9,36 @@ const addToFavs = require('../../assets/heart.png')
 
 export const TopCityItem = ({ topCity }) => {
 
-    const topCityItem = topCity.item
-    const [icon, setIcon] = useState(topCity.isFavorite ? favoritedIcon : addToFavs)
+    const topCityItem = topCity.item 
+    const [icon, setIcon] = useState(topCityItem.isFavorite ? addToFavs : favoritedIcon)
     const navigation = useNavigation()
 
-    const addToFavorite = () => {
-        if (topCityItem.isFavorite == 0) {
-            topCityItem.isFavorite = 1
-        } else {
-            topCityItem.isFavorite = 0
+    const addToFavorite = () => { 
+
+        const newTopC = {
+            _id: topCityItem._id,
+            key: topCityItem.key,
+            englishName : topCityItem.englishName,
+            weatherText : topCityItem.weatherText,
+            country: topCityItem.country,
+            metricTemp: topCityItem.metricTemp,
+            weatherIcon: topCityItem.weatherIcon,
+            dateCreated: topCityItem.dateCreated,
+            obsTime: topCityItem.obsTime
         }
 
-        WeatherRepository.saveTopCity(topCity, (savedTopCity) => {
+        if (topCityItem.isFavorite == 0) {
+            newTopC.isFavorite = 1
+        } else {
+            newTopC.isFavorite = 0
+        }
+
+
+        WeatherRepository.saveTopCity(newTopC, (savedTopCity) => {
             if (savedTopCity) {
-                setIcon(savedTopCity.isFavorite ? favoritedIcon : addToFavs)
-                showMessage({ message: "Added to favorites", type: 'info' })
+                setIcon(savedTopCity.isFavorite ? addToFavs : favoritedIcon)
+                showMessage({ message: savedTopCity.isFavorite ? "Added to favorites" : "Removed from favorites",
+                 type: 'info' })
             } else {
                 showMessage({ message: "Failed to favorites", type: 'danger' })
             }

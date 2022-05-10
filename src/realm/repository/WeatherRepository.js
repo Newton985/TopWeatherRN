@@ -12,6 +12,7 @@ export const WeatherRepository = {
                     const existing = realm.objects("TopCity").filtered("_id = '" + topCity._id + "'")
 
                     if (existing.length > 0) {
+
                         const savedTopCity = existing[0];
 
                         savedTopCity.weatherText = topCity.weatherText
@@ -23,6 +24,7 @@ export const WeatherRepository = {
                         onComplete(savedTopCity)
 
                     } else {
+
                         const savedTopCity = realm.create("TopCity", topCity);
                         onComplete(savedTopCity)
                     }
@@ -51,9 +53,12 @@ export const WeatherRepository = {
     getAllTopCities: (onComplete) => {
         Realm.open({ schema: Schema })
             .then(realm => {
-                const topCities = realm.objects("TopCity")
+                const topCities = realm.objects("TopCity").sorted("isFavorite", true)
+
                 onComplete(topCities)
+            
             }).catch(err => {
+                console.log(err)
                 onComplete(undefined)
             })
     },
@@ -78,16 +83,17 @@ export const WeatherRepository = {
         Realm.open({ schema: Schema })
             .then(realm => {
                 const topCities = realm.objects("DailyForeCast")
-                    .filtered("key = '" + locationKey + "'");
+                    .filtered("locationKey = '" + locationKey + "'");
                 onComplete(topCities)
             }).catch(err => {
                 onComplete(undefined)
+                console.log(err)
             })
 
     },
 
     // delete all Data Older Than Today
-    cleanData: (onComplete) => {
+    cleanData: (locationKey, onComplete) => {
         Realm.open({ schema: Schema })
             .then(realm => {
                 const date = new Date();
@@ -96,16 +102,10 @@ export const WeatherRepository = {
                 let currentTime = +new Date() - todayMillis;
                 currentTime = currentTime.toString()
 
-                // const topCities = realm.objects("TopCity").filtered("dateCreated < '" + currentTime + "'")
-                // realm.write(() => {
-                //     realm.delete(topCities)
-                // })
-
-                const dailyForecasts = realm.objects("DailyForeCast").filtered("epochDate < '" + currentTime + "'")
+                const dailyForecasts = realm.objects("DailyForeCast").filtered("locationKey = '" + locationKey + "'")
 
                 realm.write(() => {
                     realm.delete(dailyForecasts)
-
                     onComplete()
                 })
 
