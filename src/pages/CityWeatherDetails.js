@@ -57,12 +57,16 @@ export const CityWeatherDetails = ({ route }) => {
                         dayIcon: GET_ICON_URL(foreCast.Day.Icon),
                         dayLongPhrase: foreCast.Day.LongPhrase,
                         dayWindSpeed: foreCast.Day.Wind.Speed.Value + " KM/h",
+                        dayRain: foreCast.Day.Rain.Value + " MM",
+                        dayIce: foreCast.Day.Snow.Value + " MM",
                         dayWindDirection: foreCast.Day.Wind.Direction.English,
                         nightPhrase: foreCast.Night.ShortPhrase,
                         nightIcon: GET_ICON_URL(foreCast.Night.Icon),
                         nightLongPhrase: foreCast.Night.LongPhrase,
                         nightWindSpeed: foreCast.Night.Wind.Speed.Value + " KM/h",
                         nightWindDirection: foreCast.Night.Wind.Direction.English,
+                        nightRain: foreCast.Night.Rain.Value + " MM",
+                        nightIce: foreCast.Night.Snow.Value + " MM",
                     }
 
                     WeatherRepository.saveDailyForeCast(foreCastToSave, (savedForeCast) => {

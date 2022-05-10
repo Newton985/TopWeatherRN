@@ -88,12 +88,12 @@ export const WeatherDetailsFragment = ({ route }) => {
                     </View>
 
                     <View style={styles.VerticalView}>
-                        <Text style={styles.Temperature}>{foreCast.minTemp + " MM"}</Text>
+                        <Text style={styles.Temperature}>{foreCast.dayRain}</Text>
                         <Text style={styles.FavoriteText}>Rain</Text>
                     </View>
 
                     <View style={styles.VerticalView}>
-                        <Text style={styles.Temperature}>{foreCast.maxTemp + " MM"}</Text>
+                        <Text style={styles.Temperature}>{foreCast.dayIce}</Text>
                         <Text style={styles.FavoriteText}>Ice</Text>
                     </View>
 
@@ -135,12 +135,12 @@ export const WeatherDetailsFragment = ({ route }) => {
                     </View>
 
                     <View style={styles.VerticalView}>
-                        <Text style={styles.Temperature}>{foreCast.minTemp + " MM"}</Text>
+                        <Text style={styles.Temperature}>{foreCast.nightRain}</Text>
                         <Text style={styles.FavoriteText}>Rain</Text>
                     </View>
 
                     <View style={styles.VerticalView}>
-                        <Text style={styles.Temperature}>{foreCast.maxTemp + " MM"}</Text>
+                        <Text style={styles.Temperature}>{foreCast.nightIce}</Text>
                         <Text style={styles.FavoriteText}>Ice</Text>
                     </View>
 

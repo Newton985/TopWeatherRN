@@ -12,10 +12,14 @@ export const DailyForesCast = {
         dayLongPhrase: "string",
         dayWindSpeed: "string",
         dayWindDirection: "string",
+        dayRain: "string",
+        dayIce: "string",
         nightPhrase: "string",
         nightIcon: "string",
         nightLongPhrase: "string",
         nightWindSpeed: "string",
-        nightWindDirection: "string"
+        nightWindDirection: "string",
+        nightRain: "string",
+        nightIce: "string"
     }
 }
