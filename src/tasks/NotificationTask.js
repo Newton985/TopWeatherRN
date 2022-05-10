@@ -4,7 +4,7 @@ import { WeatherRepository } from '../realm/repository/WeatherRepository';
 
 export const StartBackGroundTasks = () => {
 
-    const delay = 60 - new Date().getMinutes() // minutes remaining till next hour
+    let delay = 60 - new Date().getMinutes() // minutes remaining till next hour
           delay = delay * 60 * 1000 // in millisecs
 
     // Background fetch setup
