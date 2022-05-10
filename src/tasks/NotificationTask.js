@@ -18,6 +18,7 @@ export const StartBackGroundTasks = () => {
 
             WeatherRepository.getAllTopCities((allTopCities) => {
                 if (allTopCities) {
+
                     const topC = allTopCities[0]
 
                     notifee.createChannel({
@@ -28,7 +29,7 @@ export const StartBackGroundTasks = () => {
                         // Display a notification
                         notifee.displayNotification({
                             title: "TopWeather Update",
-                            body: 'Temperature for '+ topC.englishName + "is " + topC.minTemp + "C",
+                            body: 'Temperature for '+ topC.englishName + " is " + topC.metricTemp + "C",
                             android: {
                                 channelId,
                             },
@@ -44,7 +45,7 @@ export const StartBackGroundTasks = () => {
             BackgroundFetch.finish(taskId);
         },
         (taskId) => {
-            console.error('RNBackgroundFetch failed to start.');
+            console.error('BackgroundFetch failed to start.');
         },
     ).then( status => {
 
