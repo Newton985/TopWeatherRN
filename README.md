@@ -27,3 +27,7 @@ The data is fethed from [AccuWeather_API](https://developer.accuweather.com/)
  * [Realm](https://www.mongodb.com/docs/realm/sdk/react-native/) for offline Persistence
  * [Notifee](https://notifee.app/react-native/docs) for the notification display
 
+
+## Download
+
+[RELEASE_APK](https://github.com/Newton985/TopWeatherRN/blob/master/apk/app-release.apk)
