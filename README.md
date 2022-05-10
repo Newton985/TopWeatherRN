@@ -17,7 +17,9 @@ The data is fethed from [AccuWeather_API](https://developer.accuweather.com/)
 
  ## Screenshots
 
-  ![Image](assets/topcities.jpg)  ![Image](assets/details.jpg) ![Image](assets/notification.jpg)
+ <img src="assets/topcities.jpg" alt="Top Cities" width="200" height="700"/>
+ <img src="assets/details.jpg" alt="Top Cities" width="200" height="700"/>
+ <img src="assets/notification.jpg" alt="Top Cities" width="200" height="700"/>
 
 
 ## Top Libraries Used
@@ -25,4 +27,3 @@ The data is fethed from [AccuWeather_API](https://developer.accuweather.com/)
  * [Realm](https://www.mongodb.com/docs/realm/sdk/react-native/) for offline Persistence
  * [Notifee](https://notifee.app/react-native/docs) for the notification display
 
- 
